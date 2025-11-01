@@ -11,3 +11,11 @@ def count_characters(book):
         else:
             char_count[char] = 1
     return char_count
+
+def get_sorted_char_count(book_characters):
+    char_count_pair = []
+    sorted_char_count = []
+    for char in book_characters:
+        char_count_pair.append({"char": char, "num": book_characters[char]})
+    sorted_char_count = sorted(char_count_pair, key=lambda x: -x["num"])
+    return sorted_char_count
